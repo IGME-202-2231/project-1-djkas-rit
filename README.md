@@ -4,7 +4,7 @@
 
 ### Student Info
 
--   Name: YOUR NAME
+-   Name: Derek Kasmark
 -   Section: ##
 
 ## Game Design
