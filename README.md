@@ -17,7 +17,7 @@
 
 ### Game Description
 
-_The player is a ship, and has to shoot down waves of enemies that descend from the top of the screen._
+_The player controls a spaceship, and has to shoot down waves of enemies that descend from the top of the screen._
 
 ### Controls
 
@@ -29,7 +29,7 @@ _The player is a ship, and has to shoot down waves of enemies that descend from 
 -   Fire: 🅾️ (Z)
 -   Focus: ❎ (X)
 
-## You Additions
+## My Additions
 
 _The game will feature a variety of procedural enemy patterns that scale in difficulty over time._
 
@@ -39,10 +39,10 @@ _The game will feature a variety of procedural enemy patterns that scale in diff
 
 ## Known Issues
 
-- Multiple ObjectDisposedException errors being raised during gameplay - investigate (doesn't seem to be noticeably impacting functionality)
-- Fire() method needs to be set up properly with the new input system
+- ObjectDisposedException errors sometimes being raised during gameplay - investigate (doesn't seem to be noticeably impacting functionality).
+- Player bullets currently detect collision with the player after being instantiated.
 
 ### Requirements not completed
 
-- Player firing
+None, currently.
 

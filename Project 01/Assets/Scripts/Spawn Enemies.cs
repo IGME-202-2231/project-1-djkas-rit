@@ -43,7 +43,5 @@ public class EnemySpawner : MonoBehaviour
     public void DestroyEnemy(GameObject enemy)
     {
         Destroy(enemy);
-
-        // collidables is cleared of nulls automatically every frame
     }
 }

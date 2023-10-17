@@ -220,7 +220,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6714280143302697575, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
   m_PrefabInstance: {fileID: 6166318318987995643}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006485469}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 138b3800f99523644a39533bc720f975, type: 3}
@@ -274,42 +274,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1006485469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2308358908837432303, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
-  m_PrefabInstance: {fileID: 6166318318987995643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1006485470 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8644935603359183044, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
   m_PrefabInstance: {fileID: 6166318318987995643}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006485469}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 245aa5047acb9074eb869d6b28908e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1006485473 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 515660680920369863, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
-  m_PrefabInstance: {fileID: 6166318318987995643}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1006485474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006485469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffe8af2cceac00468cb20cbab255dab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 1006485473}
-  fireRate: 0.1
 --- !u!1 &1171411316
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +349,19 @@ MonoBehaviour:
     m_ActionId: 7ef0154c-6e4d-48ec-b07c-09146f7bd918
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 549494933}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
     m_ActionName: Player/Fire[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
@@ -404,14 +391,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171411316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8597306dbd4fe14685edaf8bc0cc663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collidables:
   - {fileID: 1006485470}
-  useBoundingCircle: 0
 --- !u!1001 &6166318318987995643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +450,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 622430716135678700, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 3341291685297967709, guid: 32603459d98beb24c9e97c4b6c57497c, type: 3}
+    - target: {fileID: 622430716135678700, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
+      propertyPath: collisionManager
+      value: 
+      objectReference: {fileID: 1171411319}
     - target: {fileID: 2308358908837432303, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
       propertyPath: m_Name
       value: player
@@ -476,11 +470,12 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6714280143302697575, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
+      propertyPath: collisionManager
+      value: 
+      objectReference: {fileID: 1171411319}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2308358908837432303, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1006485474}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64699bcbc391e394a8c00257cd3b8eff, type: 3}

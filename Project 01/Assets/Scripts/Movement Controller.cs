@@ -9,6 +9,9 @@ public class MovementController : MonoBehaviour
     Vector3 objectDirection = Vector3.zero;
 
     [SerializeField]
+    CollisionManager collisionManager;
+
+    [SerializeField]
     float speed = 1f;
 
     Vector3 velocity = Vector3.zero;
@@ -39,25 +42,12 @@ public class MovementController : MonoBehaviour
 
         objectPosition += velocity;
 
-        // wrap horizontal
-        if (objectPosition.x < leftEdge)
-        {
-            objectPosition.x = rightEdge;
-        }
-        else if (objectPosition.x > rightEdge)
-        {
-            objectPosition.x = leftEdge;
-        }
+        // clamp horizontal position
+        objectPosition.x = Mathf.Clamp(objectPosition.x, leftEdge, rightEdge);
 
-        // wrap vertical
-        if (objectPosition.y < bottomEdge)
-        {
-            objectPosition.y = topEdge;
-        }
-        else if (objectPosition.y > topEdge)
-        {
-            objectPosition.y = bottomEdge;
-        }
+        // clamp vertical position
+        objectPosition.y = Mathf.Clamp(objectPosition.y, bottomEdge, topEdge);
+
 
         transform.position = objectPosition;
     }
@@ -92,7 +82,9 @@ public class MovementController : MonoBehaviour
 
     public void Fire()
     {
-        //Instantiate(bulletPrefab, transform.position, transform.rotation);
-        Console.WriteLine("Fire!");
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+        // add bullet to collision manager
+        collisionManager.AddCollidable(bullet.GetComponent<SpriteInfo>());
     }
 }

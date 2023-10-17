@@ -20,12 +20,10 @@ public class InputController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
-
         movementController.Fire();
     }
 
     void Update()
     {
-        //
     }
 }
