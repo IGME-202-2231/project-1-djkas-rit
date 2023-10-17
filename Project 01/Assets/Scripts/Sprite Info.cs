@@ -65,8 +65,6 @@ public class SpriteInfo : MonoBehaviour
         {
             Gizmos.color = Color.green;
         }
-
-        Gizmos.DrawWireSphere(transform.position, radius);
         Gizmos.DrawWireCube(transform.position, rectSize);
     }
 }

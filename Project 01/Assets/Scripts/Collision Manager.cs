@@ -72,4 +72,9 @@ public class CollisionManager : MonoBehaviour
     {
         useBoundingCircle = !useBoundingCircle;
     }
+
+    public void AddCollidable(SpriteInfo collidable)
+    {
+        collidables.Add(collidable);
+    }
 }
