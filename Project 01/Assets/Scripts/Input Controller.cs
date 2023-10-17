@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,12 +18,14 @@ public class InputController : MonoBehaviour
         movementController.SetDirection(context.ReadValue<Vector2>());
     }
 
+    public void OnFire(InputAction.CallbackContext context)
+    {
+
+        movementController.Fire();
+    }
+
     void Update()
     {
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard.spaceKey.wasPressedThisFrame)
-        {
-            collisionManager.ToggleBoundingCircle();
-        }
+        //
     }
 }

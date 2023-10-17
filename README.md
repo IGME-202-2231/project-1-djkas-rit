@@ -26,8 +26,8 @@ _The player is a ship, and has to shoot down waves of enemies that descend from 
     -   Down: ⬇️
     -   Left: ⬅️
     -   Right: ➡️
--   Fire: 🅾️
--   Focus: ❎
+-   Fire: 🅾️ (Z)
+-   Focus: ❎ (X)
 
 ## You Additions
 
@@ -35,13 +35,14 @@ _The game will feature a variety of procedural enemy patterns that scale in diff
 
 ## Sources
 
--   [Spaceship sprites](https://ansimuz.itch.io/spaceship-shooter-environment) courtesy of Luis Zuno (@ansimuz). 
+-   [Sprites](https://ansimuz.itch.io/spaceship-shooter-environment) courtesy of Luis Zuno (@ansimuz). 
 
 ## Known Issues
 
-_None, currently._
+- Multiple ObjectDisposedException errors being raised during gameplay - investigate (doesn't seem to be noticeably impacting functionality)
+- Fire() method needs to be set up properly with the new input system
 
 ### Requirements not completed
 
-_None, currently._
+- Player firing
 

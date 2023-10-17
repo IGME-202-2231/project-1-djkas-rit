@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class MovementController : MonoBehaviour
     private float rightEdge;
     private float topEdge;
     private float bottomEdge;
+
+    [SerializeField]
+    GameObject bulletPrefab;
 
 
     // Start is called before the first frame update
@@ -84,5 +88,11 @@ public class MovementController : MonoBehaviour
     {
         //Gizmos.color = Color.red;
         //Gizmos.DrawLine(transform.position, transform.position + objectDirection);
+    }
+
+    public void Fire()
+    {
+        //Instantiate(bulletPrefab, transform.position, transform.rotation);
+        Console.WriteLine("Fire!");
     }
 }

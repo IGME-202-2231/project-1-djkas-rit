@@ -32,11 +32,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        // Define the spawn position at the top of the screen
         float spawnX = Random.Range(-5.0f, 5.0f);
         Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, 0);
-
-        // Instantiate the enemy
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
         // add enemy to collision manager
@@ -46,5 +43,7 @@ public class EnemySpawner : MonoBehaviour
     public void DestroyEnemy(GameObject enemy)
     {
         Destroy(enemy);
+
+        // collidables is cleared of nulls automatically every frame
     }
 }

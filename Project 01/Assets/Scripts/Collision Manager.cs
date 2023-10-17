@@ -7,9 +7,6 @@ public class CollisionManager : MonoBehaviour
     [SerializeField]
     List<SpriteInfo> collidables = new List<SpriteInfo>();
 
-    [SerializeField]
-    bool useBoundingCircle = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +16,9 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // remove nulls
+        collidables.RemoveAll(item => item == null);
+
         // set all sprites to not colliding
         foreach (SpriteInfo collidable in collidables)
         {
@@ -30,23 +30,10 @@ public class CollisionManager : MonoBehaviour
         {
             for (int j = i + 1; j < collidables.Count; j++)
             {
-                // check AABB
-                if (!useBoundingCircle) 
+                if (AABB(collidables[i], collidables[j]))
                 {
-                    if (AABB(collidables[i], collidables[j]))
-                    {
-                        collidables[i].IsColliding = true;
-                        collidables[j].IsColliding = true;
-                    }
-                }
-                else
-                {
-                    // check bounding circle
-                    if (BoundingCircle(collidables[i], collidables[j]))
-                    {
-                        collidables[i].IsColliding = true;
-                        collidables[j].IsColliding = true;
-                    }
+                    collidables[i].IsColliding = true;
+                    collidables[j].IsColliding = true;
                 }
             }
         }
@@ -60,21 +47,13 @@ public class CollisionManager : MonoBehaviour
             b.rectMin.y < a.rectMax.y);
     }
 
-    bool BoundingCircle(SpriteInfo a, SpriteInfo b)
-    {
-        Vector2 distance = a.transform.position - b.transform.position;
-        float radii = a.Radius + b.Radius;
-
-        return (distance.sqrMagnitude < radii * radii);
-    }
-
-    public void ToggleBoundingCircle()
-    {
-        useBoundingCircle = !useBoundingCircle;
-    }
-
     public void AddCollidable(SpriteInfo collidable)
     {
         collidables.Add(collidable);
+    }
+
+    public void RemoveCollidable(SpriteInfo collidable)
+    {
+        collidables.Remove(collidable);
     }
 }
