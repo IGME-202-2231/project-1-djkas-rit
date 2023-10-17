@@ -41,6 +41,7 @@ _The game will feature a variety of procedural enemy patterns that scale in diff
 
 - ObjectDisposedException errors sometimes being raised during gameplay - investigate (doesn't seem to be noticeably impacting functionality).
 - Player bullets currently detect collision with the player after being instantiated.
+- current HTML5 build crashes with "Maximum call stack size exceeded/Too much recursion" error
 
 ### Requirements not completed
 
