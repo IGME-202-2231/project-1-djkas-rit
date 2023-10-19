@@ -1,6 +1,4 @@
-# Project PROJECT_NAME
-
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
+# Streamline
 
 ### Student Info
 
@@ -17,7 +15,7 @@
 
 ### Game Description
 
-_The player controls a spaceship, and has to shoot down waves of enemies that descend from the top of the screen._
+_The player is in control of a spaceship, and has to shoot down waves of hostile forces that descend from the top of the screen. The player can move in any direction, and can fire bullets to destroy enemies. The player has a limited number of lives, and the game will only end when the player runs out. _
 
 ### Controls
 
@@ -31,7 +29,7 @@ _The player controls a spaceship, and has to shoot down waves of enemies that de
 
 ## My Additions
 
-_The game will feature a variety of procedural enemy patterns that scale in difficulty over time._
+_The game will feature a variety of procedural enemy patterns that scale in difficulty as the game progresses. Additionally, the player will be able to enter a "focus" state by holding down the ❎ (X) button, allowing them to slow down and make more precise movements._
 
 ## Sources
 
@@ -39,8 +37,7 @@ _The game will feature a variety of procedural enemy patterns that scale in diff
 
 ## Known Issues
 
-- ObjectDisposedException errors sometimes being raised during gameplay - investigate (doesn't seem to be noticeably impacting functionality).
-- Player bullets currently detect collision with the player after being instantiated.
+- Player bullets currently detect collision with the player after being instantiated, which may complicate collision handling. Will likely need to handle player and enemy collisions seperately in collision manager.
 
 ### Requirements not completed
 
