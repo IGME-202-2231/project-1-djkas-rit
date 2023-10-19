@@ -15,7 +15,7 @@
 
 ### Game Description
 
-_The player is in control of a spaceship, and has to shoot down waves of hostile forces that descend from the top of the screen. The player can move in any direction, and can fire bullets to destroy enemies. The player has a limited number of lives, and the game will only end when the player runs out. _
+_The player is in control of a spaceship, and has to shoot down waves of hostile forces that descend from the top of the screen. The player can move in any direction, and can fire bullets to destroy enemies. The player has a limited number of lives, and the game will only end when the player runs out._
 
 ### Controls
 
