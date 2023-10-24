@@ -30,6 +30,7 @@ _The player is in control of a spaceship, and has to hold the line against waves
 
 - _Every enemy that you allow to slip past your defenses will give a score penalty, making prioritisation and risky manoeuvres necessary to keep your high score._
 - _The player's high score will be saved and displayed alongside their current score, even across different gameplay sessions._
+- _After the game is finished, the player's current and high scores will be displayed on a game over screen._
 
 ## Sources
 
