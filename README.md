@@ -29,7 +29,6 @@ _The player is in control of a spaceship, and has to hold the line against waves
 ## My Additions
 
 - _Every enemy that you allow to slip past your defenses will give a score penalty, making prioritisation and risky manoeuvres necessary to keep your high score._
-- _Enemies will occasionally drop power-ups that can be collected to either increase your rate of fire or clear the screen of enemies._
 - _The player's high score will be saved and displayed alongside their current score._
 
 ## Sources
