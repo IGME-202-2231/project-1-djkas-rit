@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8460602702255363321}
   - component: {fileID: 3800667074244597974}
   m_Layer: 0
-  m_Name: enemy_small
+  m_Name: enemy_big
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c25c9dd3d4dca4440b281d7cb92af70b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5d0105a22ac1f34d9538f4733302ad9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cce87b0cbb4c04186716d198d3de09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0.5
   EnemySpawner: {fileID: 0}
 --- !u!114 &8460602702255363321
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fb65ea764dfa34fbe7edd2e9cb1dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 50
 --- !u!114 &3800667074244597974
 MonoBehaviour:
   m_ObjectHideFlags: 0

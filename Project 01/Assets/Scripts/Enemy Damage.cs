@@ -32,12 +32,4 @@ public class EnemyDamage : MonoBehaviour
     {
         health -= damage;
     }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Vector3 position = transform.position;
-        position.y += 0.1f;
-        Handles.Label(transform.position, health.ToString());
-    }
 }

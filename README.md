@@ -15,7 +15,7 @@
 
 ### Game Description
 
-_The player is in control of a spaceship, and has to shoot down waves of hostile forces that descend from the top of the screen. The player can move in any direction, and can fire bullets to destroy enemies. The player has a limited number of lives, and the game will only end when the player runs out._
+_The player is in control of a spaceship, and has to hold the line against waves of hostile forces that descend from the top of the screen. Shooting down enemies will increase your score, but letting them reach the bottom of the screen will decrease it. The player can move in any direction, and can fire bullets to destroy enemies. The game will end when the player runs out of lives._
 
 ### Controls
 
@@ -25,11 +25,12 @@ _The player is in control of a spaceship, and has to shoot down waves of hostile
     -   Left: ⬅️
     -   Right: ➡️
 -   Fire: 🅾️ (Z)
--   Focus: ❎ (X)
 
 ## My Additions
 
-_The game will feature a variety of procedural enemy patterns that scale in difficulty as the game progresses. Additionally, the player will be able to enter a "focus" state by holding down the ❎ (X) button, allowing them to slow down and make more precise movements._
+- _Every enemy that you allow to slip past your defenses will give a score penalty, making prioritisation and risky manoeuvres necessary to keep your high score._
+- _Enemies will occasionally drop power-ups that can be collected to either increase your rate of fire or clear the screen of enemies._
+- _The player's high score will be saved and displayed alongside their current score._
 
 ## Sources
 
@@ -37,7 +38,7 @@ _The game will feature a variety of procedural enemy patterns that scale in diff
 
 ## Known Issues
 
-- Player bullets currently detect collision with the player after being instantiated, which may complicate collision handling. Will likely need to handle player and enemy collisions seperately in collision manager.
+None, currently.
 
 ### Requirements not completed
 

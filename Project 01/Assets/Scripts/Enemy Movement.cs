@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         // destroy if enemy goes below lower bound
         if (transform.position.y < lowerBoundY)
         {
-            // TODO: modify this to notify manager object instead of directly destroying
+            
 
             //EnemySpawner.DestroyEnemy(gameObject); 
             Destroy(gameObject);

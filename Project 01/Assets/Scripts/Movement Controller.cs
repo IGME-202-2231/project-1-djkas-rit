@@ -86,8 +86,8 @@ public class MovementController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawLine(transform.position, transform.position + objectDirection);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + objectDirection);
     }
 
     public void Fire()
