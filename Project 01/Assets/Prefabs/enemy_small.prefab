@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6104362900389299470}
   - component: {fileID: 6251642527636316138}
   - component: {fileID: 444183862939268379}
+  - component: {fileID: 8460602702255363321}
   - component: {fileID: 3800667074244597974}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: enemy_small
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,8 +99,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cce87b0cbb4c04186716d198d3de09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   EnemySpawner: {fileID: 0}
+--- !u!114 &8460602702255363321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44514791796294464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3fb65ea764dfa34fbe7edd2e9cb1dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!114 &3800667074244597974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,4 +129,4 @@ MonoBehaviour:
   radius: 1
   rectSize: {x: 1, y: 1}
   spriteRenderer: {fileID: 6251642527636316138}
-  useRendererBounds: 0
+  useRendererBounds: 1

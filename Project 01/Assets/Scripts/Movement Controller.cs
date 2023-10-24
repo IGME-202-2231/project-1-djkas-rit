@@ -16,6 +16,8 @@ public class MovementController : MonoBehaviour
 
     Vector3 velocity = Vector3.zero;
 
+    private bool isShooting = false;
+
     private Camera mainCamera;
 
     private float leftEdge;
@@ -26,6 +28,10 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     GameObject bulletPrefab;
 
+    public bool IsShooting
+    {
+        set { isShooting = value; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +49,17 @@ public class MovementController : MonoBehaviour
         objectPosition += velocity;
 
         // clamp horizontal position
-        objectPosition.x = Mathf.Clamp(objectPosition.x, leftEdge, rightEdge);
+        objectPosition.x = Mathf.Clamp(objectPosition.x, leftEdge + 0.5f, rightEdge - 0.5f);
 
         // clamp vertical position
-        objectPosition.y = Mathf.Clamp(objectPosition.y, bottomEdge, topEdge);
-
+        objectPosition.y = Mathf.Clamp(objectPosition.y, bottomEdge + 0.5f, topEdge - 0.5f);
 
         transform.position = objectPosition;
+
+        if (isShooting && Time.frameCount % 60 == 0)
+        {
+            Fire();
+        }
     }
 
     public void SetDirection(Vector3 newDirection)
@@ -86,5 +96,10 @@ public class MovementController : MonoBehaviour
 
         // add bullet to collision manager
         collisionManager.AddCollidable(bullet.GetComponent<SpriteInfo>());
+    }
+
+    public void PlayerHit()
+    {
+        Debug.Log("Player hit");
     }
 }

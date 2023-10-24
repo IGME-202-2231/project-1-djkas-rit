@@ -40,15 +40,6 @@ public class SpriteInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isColliding)
-        {
-            spriteRenderer.color = Color.red;
-        }
-        else
-        {
-            spriteRenderer.color = Color.white;
-        }
-
         if (useRendererBounds)
         {
             rectSize = spriteRenderer.bounds.extents * 2;

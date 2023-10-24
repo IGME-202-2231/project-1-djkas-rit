@@ -20,7 +20,15 @@ public class InputController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
-        movementController.Fire();
+        if (context.started)
+        {
+            movementController.IsShooting = true;
+        }
+
+        if (context.canceled)
+        {
+            movementController.IsShooting = false;
+        }
     }
 
     void Update()

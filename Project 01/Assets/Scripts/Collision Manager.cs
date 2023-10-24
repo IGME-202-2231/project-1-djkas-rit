@@ -34,6 +34,28 @@ public class CollisionManager : MonoBehaviour
                 {
                     collidables[i].IsColliding = true;
                     collidables[j].IsColliding = true;
+
+                    string tag1 = collidables[i].gameObject.tag;
+                    string tag2 = collidables[j].gameObject.tag;
+
+                    if (tag1 == "Player" && tag2 == "Enemy")
+                    {
+                        collidables[i].gameObject.GetComponent<MovementController>().PlayerHit();
+                    }
+                    else if (tag1 == "Enemy" && tag2 == "Player")
+                    {
+                        collidables[j].gameObject.GetComponent<MovementController>().PlayerHit();
+                    }
+                    else if (tag1 == "Bullet" && tag2 == "Enemy")
+                    {
+                        collidables[j].gameObject.GetComponent<EnemyDamage>().takeDamage();
+                        Destroy(collidables[i].gameObject);
+                    }
+                    else if (tag1 == "Enemy" && tag2 == "Bullet")
+                    {
+                        collidables[i].gameObject.GetComponent<EnemyDamage>().takeDamage();
+                        Destroy(collidables[j].gameObject);
+                    }
                 }
             }
         }
