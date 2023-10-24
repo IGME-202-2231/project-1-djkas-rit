@@ -7,11 +7,21 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
     float speed = 5f;
+
+    [SerializeField]
+    int pointValue = 100;
+
     float lowerBoundY = -5.5f;
 
     [SerializeField]
     EnemySpawner EnemySpawner;
 
+    ScoreManager scoreManager;
+
+    private void Start()
+    {
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+    }
     private void Update()
     {
         Vector3 newPosition = transform.position + Vector3.down * speed * Time.deltaTime;
@@ -20,9 +30,7 @@ public class EnemyMovement : MonoBehaviour
         // destroy if enemy goes below lower bound
         if (transform.position.y < lowerBoundY)
         {
-            
-
-            //EnemySpawner.DestroyEnemy(gameObject); 
+            scoreManager.UpdateScore(-pointValue);
             Destroy(gameObject);
         }
     }

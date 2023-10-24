@@ -7,12 +7,6 @@ public class CollisionManager : MonoBehaviour
     [SerializeField]
     List<SpriteInfo> collidables = new List<SpriteInfo>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,11 +34,11 @@ public class CollisionManager : MonoBehaviour
 
                     if (tag1 == "Player" && tag2 == "Enemy")
                     {
-                        collidables[i].gameObject.GetComponent<MovementController>().PlayerHit();
+                        collidables[i].gameObject.GetComponent<MovementController>().GameOver();
                     }
                     else if (tag1 == "Enemy" && tag2 == "Player")
                     {
-                        collidables[j].gameObject.GetComponent<MovementController>().PlayerHit();
+                        collidables[j].gameObject.GetComponent<MovementController>().GameOver();
                     }
                     else if (tag1 == "Bullet" && tag2 == "Enemy")
                     {

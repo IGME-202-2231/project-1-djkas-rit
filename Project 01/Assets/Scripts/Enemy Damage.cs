@@ -7,18 +7,21 @@ public class EnemyDamage : MonoBehaviour
 {
     [SerializeField]
     float health = 1.0f;
+    [SerializeField]
+    int pointValue = 100;
 
-    // Start is called before the first frame update
+    ScoreManager scoreManager;
+    
     void Start()
     {
-        
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (health <= 0.0f)
         {
+            scoreManager.UpdateScore(pointValue);
             Destroy(gameObject);
         }
     }

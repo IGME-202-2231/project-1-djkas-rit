@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  pointValue: 100
   EnemySpawner: {fileID: 0}
 --- !u!114 &8460602702255363321
 MonoBehaviour:
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  pointValue: 100
 --- !u!114 &3800667074244597974
 MonoBehaviour:
   m_ObjectHideFlags: 0

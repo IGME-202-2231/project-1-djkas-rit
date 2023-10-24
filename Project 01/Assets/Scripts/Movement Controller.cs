@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class MovementController : MonoBehaviour
 
     [SerializeField]
     CollisionManager collisionManager;
+
+    [SerializeField]
+    Canvas gameOverCanvas;
 
     [SerializeField]
     float speed = 1f;
@@ -39,6 +43,7 @@ public class MovementController : MonoBehaviour
         mainCamera = Camera.main;
         CalculateEdges();
         objectPosition = transform.position;
+        gameOverCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -98,8 +103,10 @@ public class MovementController : MonoBehaviour
         collisionManager.AddCollidable(bullet.GetComponent<SpriteInfo>());
     }
 
-    public void PlayerHit()
+    public void GameOver()
     {
-        Debug.Log("Player hit");
+        gameOverCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0;
+        gameObject.SetActive(false);
     }
 }
